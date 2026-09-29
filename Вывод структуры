@@ -1,0 +1,47 @@
+3. Вывод структуры 
+#include <iostream>
+#include <string>
+
+struct Address 
+{
+    std::string city;
+    std::string street;
+    int houseNumber;
+    int apartmentNumber;
+    std::string zipCode
+}
+
+void printAddress(const Address& addr) 
+{
+    std::cout << "Город: "          << addr.city           << "\n" std::endl;
+    std::cout << "Улица: "          << addr.street         << "\n" std::endl;
+    std::cout << "Номер дома: "     << addr.houseNumber    << "\n" std::endl;
+    std::cout << "Номер квартиры: " << addr.apartmentNumber << "\n" std::endl;
+    std::cout << "Индекс: "         << addr.zipCode        << "\n" std::endl;
+    std::cout << "-------------------------------\n" std::endl;
+}
+
+int main() 
+{
+    Address addr1;
+    addr1.city           = "Красноярск";
+    addr1.street         = "ул. Ленина";
+    addr1.houseNumber    = 5;
+    addr1.apartmentNumber = 12;
+    addr1.zipCode        = "660000";
+
+    Address addr2;
+    addr2.city           = "Москва";
+    addr2.street         = "ул. Тверская";
+    addr2.houseNumber    = 14;
+    addr2.apartmentNumber = 25;
+    addr2.zipCode        = "125009";
+
+    std::cout << "=== Адрес 1 ===\n" std::endl;
+    printAddress(addr1);
+
+    std::cout << "=== Адрес 2 ===\n" std::endl;
+    printAddress(addr2);
+
+    return 0;
+}
