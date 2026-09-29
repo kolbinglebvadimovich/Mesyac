@@ -1,0 +1,44 @@
+2. Счета
+#include <iostream>
+#include <string>
+
+struct BankAccount 
+{
+    long long accountNumber;
+    std::string ownerName;
+    double balance;
+}
+
+void updateBalance(BankAccount& account, double newBalance) 
+{
+    account.balance = newBalance;
+}
+
+int main() 
+{
+    BankAccount account;
+
+    std::cout << "Введите номер счёта: " << std::endl;
+    std::cin >> account.accountNumber;
+
+    std::cout << "Введите имя владельца счёта: " << std::endl;
+    std::cin.ignore();
+    std::getline(std::cin, account.ownerName);
+
+    std::cout << "Введите текущий баланс счёта: " << std::endl;
+    std::cin >> account.balance;
+
+    double newBalance;
+    std::cout << "Введите новый баланс счёта: " << std::endl;
+    std::cin >> newBalance;
+
+    updateBalance(account, newBalance);
+
+    // Вывод обновлённого экземпляра структуры
+    std::cout << "\n--- Данные обновлённого счёта ---\n" << std::endl;
+    std::cout << "Номер счёта: " << account.accountNumber << "\n" << std::endl;
+    std::cout << "Владелец: " << account.ownerName << "\n" << std::endl;
+    std::cout << "Баланс: " << account.balance << "\n" << std::endl;
+
+    return 0;
+}
